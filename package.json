@@ -1,7 +1,8 @@
 {
   "name": "kanban-board",
   "author": "Oleg Veremyev",
-  "private": true,
+  "private": false,
+  "description": "Kanban board copy with alternative layout",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
