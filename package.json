@@ -1,15 +1,27 @@
 {
   "name": "kanban-board",
+  "version": "0.1.0",
   "author": "Oleg Veremyev",
   "private": false,
   "description": "Kanban board copy with alternative layout",
+  "keywords": ["Nuxt", "Vue", "Typescript", "Tailwindcss", "Appwrite", "Dashboard", "KanbanBoard"],
+  "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev:dev": "NODE_ENV=development nuxt dev --open",
+    "dev:dev:debug": "NODE_ENV=development nuxt dev --inspect",
+    "dev:prod": "NODE_ENV=production nuxt dev",
+    "build:dev:analyze": "NODE_ENV=development nuxt build --analyze",
+    "build:prod": "NODE_ENV=production nuxt build",
+    "generate:dev": "NODE_ENV=development nuxt generate",
+    "generate:prod": "NODE_ENV=production nuxt generate",
+    "predeploy:dev": "npm run build:dev",
+    "predeploy:prod": "npm run build:prod",
+    "preview:dev": "NODE_ENV=development nuxt preview",
+    "preview:prod": "NODE_ENV=production nuxt preview",
+    "clean": "rm -rf node_modules && yarn cache clean",
+    "reset": "rm -rf node_modules && rm yarn.lock && yarn cache clean",
+    "reset_and_reinstall": "rm -rf node_modules && rm yarn.lock && yarn cache clean && yarn"
   },
   "dependencies": {
     "@nuxt/image": "^1.7.0",
@@ -23,9 +35,6 @@
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
-  "engines": {
-    "node": "18"
-  },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.0",
@@ -33,5 +42,20 @@
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
-  }
+  },
+  "engines": {
+    "node": ">=18",
+    "yarn": ">=1.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OlegWeremyew/kanban-board.git"
+  },
+  "contributors": [
+    {
+      "name": "Oleg Veremyev",
+      "email": "olegweremey1994@mail.ru",
+      "url": "https://github.com/OlegWeremyew"
+    }
+  ]
 }
